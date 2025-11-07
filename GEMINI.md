@@ -34,6 +34,17 @@ Gemini owns the **make it real** portion of the workflow:
 
 This project will be a key part of my portfolio. It will be integrated with my existing portfolio website, which is built with PHP and ProcessWire. The project will be showcased in a dedicated section of my portfolio, with a detailed description of the project and its features.
 
+## Live Preview Workflow
+
+This project uses a new workflow that is designed to provide you with a live preview of the changes I make. The workflow is as follows:
+
+1.  **I will make the changes:** I will make the necessary changes to the code to implement the requested features.
+2.  **I will update Docker:** After making the changes, I will immediately rebuild the Docker image and restart the containers to make the changes visible to you.
+3.  **I will update the documentation:** I will update the `GEMINI.md` and `AGENTS.md` files to reflect the changes I've made and to provide clear instructions on how to use the new features.
+4.  **Codex will review the code:** I will then hand over the work to the Codex agent to review the code, update the README, and push the changes to the Git repository with a descriptive commit message.
+
+This workflow is designed to provide you with a more transparent and efficient development process. By providing you with a live preview of the changes, you can provide feedback early and often, which will help to ensure that the final product meets your expectations.
+
 ## Workflow
 
 This project uses a new workflow that is designed to make your development process more efficient. The workflow is based on the concept of AI agents, which are AI assistants that are specialized in different tasks.

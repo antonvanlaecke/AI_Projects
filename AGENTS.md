@@ -1,31 +1,38 @@
-# AI Agents Playbook
+# AI Agents
 
-Gemini and Codex collaborate in a builder–reviewer loop. Use this guide to keep responsibilities crystal clear so hand-offs stay smooth and nothing gets lost between agents.
+This document outlines the roles and responsibilities of the different AI agents used in this project.
 
-## Gemini · Builder / Implementer
+## Workflow
 
-- **Discovery & Planning** – gather requirements, propose solutions, break work into milestones.
-- **Implementation** – build features (ProcessWire setup, Twig views, CSS, backend hooks, Docker tweaks) and run local validation.
-- **Environment Care** – keep Docker services up, seed data, ensure `.env`/secrets instructions exist.
-- **Handoff Notes** – summarize what changed in `docs/BUILD_LOG.md`, flag tests to run, list open questions for Codex.
+The workflow is as follows:
 
-### Gemini Handoff Checklist
-1. Code is saved in the repo working tree (not just inside the container).
-2. Local preview/build succeeds or the failure is documented.
-3. README and relevant docs mention any new commands, env vars, or decisions.
-4. `docs/BUILD_LOG.md` entry added with timestamp + short summary.
-5. Ping Codex with the scope and any focus areas for review.
+1.  **Gemini:** Gemini is the primary AI assistant for this project. Gemini's responsibilities include:
+    *   Generating code snippets and entire files based on your requirements.
+    *   Solving problems and finding solutions to technical challenges.
+    *   Automating tasks and workflows to make your development process more efficient.
+    *   Project management.
+    *   Rebuilding the Docker image and restarting the containers to make the changes visible to you.
+2.  **Codex:** Codex is the quality assurance AI assistant for this project. Codex's responsibilities include:
+    *   Reviewing your code to ensure that it is high-quality and that it follows best practices.
+    *   Updating the README file and other documentation to reflect the latest changes to the project.
+    *   Creating descriptive and informative Git commits to help you to keep track of your changes.
+    *   Pushing the changes to the correct Git repository.
 
-## Codex · QA / Release Engineer
+## Gemini
 
-- **Code Review & QA** – inspect Gemini’s changes, enforce clean code practices, add guardrails/tests if missing.
-- **Documentation Steward** – keep README, BUILD_LOG, and other guides aligned with the actual implementation.
-- **Git & Releases** – stage, commit, and push cohesive changesets; manage tags or release notes when needed.
-- **Observability** – capture verification steps, note risks, and suggest follow-up tasks for Gemini.
+Gemini is the primary AI assistant for this project. Gemini's responsibilities include:
 
-### Codex Completion Checklist
-1. Run/check any commands Gemini noted (tests, builds, Docker, etc.).
-2. Add review notes or TODOs to `docs/BUILD_LOG.md` if follow-up is required.
-3. Update documentation touched by the review (README, guides, scripts).
-4. Commit with a descriptive message and push to the correct remote.
-5. Confirm `git status` is clean before handing back to Gemini.
+*   **Code Generation:** Generating code snippets and entire files based on your requirements.
+*   **Problem Solving:** Helping you to solve problems and to find solutions to technical challenges.
+*   **Workflow Automation:** Automating tasks and workflows to make your development process more efficient.
+*   **Project Management:** Helping you to manage the project and to keep track of your progress.
+
+## Codex
+
+Codex is the quality assurance AI assistant for this project. Codex's responsibilities include:
+
+*   **Code Review:** Reviewing your code to ensure that it is high-quality and that it follows best practices.
+*   **Documentation:** Updating the README file and other documentation to reflect the latest changes to the project.
+*   **Git Commits:** Creating descriptive and informative Git commits to help you to keep track of your changes.
+*   **Git Push:** Pushing the changes to the correct Git repository.
+
