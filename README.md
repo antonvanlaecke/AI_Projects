@@ -52,7 +52,7 @@ docker compose down            # stop and remove containers/volumes
 
 - `index.html` renders the landing page preview with project cards, highlight grid, and skills list.
 - CSS is shared with ProcessWire templates (`site/assets/css/style.css`), so the visual system matches the Twig implementation.
-- Dark/light toggle in the header (powered by `site/assets/css/dark.css` + `site/assets/js/theme.js`).
+- Dark/light toggle in the header (powered by `site/assets/css/dark.css` + `site/assets/js/theme.js`) defaults to the system preference and can be overridden per visitor.
 
 > ProcessWire core files (`wire/` etc.) are not committed. Install them inside Docker via the official ZIP or Composer when you are ready to hook up the CMS. The repo only contains the custom `site/` directory and supporting tooling.
 

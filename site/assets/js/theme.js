@@ -1,21 +1,44 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const themeSwitcher = document.getElementById('theme-switcher');
     const html = document.documentElement;
+    const themeSwitcher = document.getElementById('theme-switcher');
+    if (!themeSwitcher) return;
 
-    // Check for saved theme preference
+    const prefersDarkQuery = window.matchMedia('(prefers-color-scheme: dark)');
+
+    const applyTheme = (theme) => {
+        html.setAttribute('data-theme', theme);
+        const isDark = theme === 'dark';
+        themeSwitcher.setAttribute('aria-pressed', String(isDark));
+        themeSwitcher.querySelector('.theme-switcher__icon').textContent = isDark ? '🌞' : '🌙';
+        themeSwitcher.querySelector('.theme-switcher__label').textContent = isDark ? 'Light mode' : 'Dark mode';
+    };
+
+    const getSystemTheme = () => (prefersDarkQuery.matches ? 'dark' : 'light');
+
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme) {
-        html.setAttribute('data-theme', savedTheme);
+        applyTheme(savedTheme);
     } else {
-        // Check for system preference
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        html.setAttribute('data-theme', prefersDark ? 'dark' : 'light');
+        applyTheme(getSystemTheme());
     }
 
     themeSwitcher.addEventListener('click', () => {
-        const currentTheme = html.getAttribute('data-theme');
-        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-        html.setAttribute('data-theme', newTheme);
-        localStorage.setItem('theme', newTheme);
+        const nextTheme = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+        applyTheme(nextTheme);
+        localStorage.setItem('theme', nextTheme);
     });
+
+    if (prefersDarkQuery.addEventListener) {
+        prefersDarkQuery.addEventListener('change', (event) => {
+            if (!localStorage.getItem('theme')) {
+                applyTheme(event.matches ? 'dark' : 'light');
+            }
+        });
+    } else if (prefersDarkQuery.addListener) {
+        prefersDarkQuery.addListener((event) => {
+            if (!localStorage.getItem('theme')) {
+                applyTheme(event.matches ? 'dark' : 'light');
+            }
+        });
+    }
 });

@@ -11,5 +11,6 @@ Chronological overview of the steps taken by Gemini (builder) and Codex (QA) whi
 | 2025-11-07 01:50 | Codex | Release prep | Cleaned repo (gitignore, restored agent docs), documented live preview workflow, and prepared initial site scaffolding for commit. |
 | 2025-11-07 02:05 | Codex | Agent playbook + dark mode refresh | Clarified Gemini/Codex responsibilities, documented handoff checklists, and folded Gemini's new dark-mode assets into the shared base layout (CSS/JS). |
 | 2025-11-07 02:20 | Codex | Preview parity + shutdown | Synced `index.html` with the theme toggle assets, updated README/status notes, and stopped the Docker stack per request. |
+| 2025-11-07 02:35 | Codex | Theme polish | Improved the switcher styling, added system-preference defaults (inline bootstrap + JS), and documented the behavior. |
 
 > Keep appending to this table whenever Gemini or Codex performs a meaningful step so we always know what changed, why, and by whom.
