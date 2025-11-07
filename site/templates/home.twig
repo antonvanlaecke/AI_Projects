@@ -1,0 +1,13 @@
+{% extends "_layout.twig" %}
+
+{% block content %}
+    <section id="home">
+        <h1>{{ page.title }}</h1>
+        <p class="intro">{{ page.summary }}</p>
+
+        <div class="call-to-action">
+            <a href="{{ pages.get('/projects/').url }}" class="btn">View My Work</a>
+        </div>
+    </section>
+{% endblock %}
+

@@ -10,20 +10,20 @@ As Codex, your role is to provide high-level analysis of the project and its goa
 
 When providing strategic thinking, you should consider the following:
 
-*   **Project Goals:** What are the goals of the project? What does the developer want to achieve?
-*   **Target Audience:** Who is the target audience for the website? What are their needs and expectations?
-*   **Technology Stack:** What is the best technology stack for the project? What are the pros and cons of different technologies?
-*   **AI Models:** Which AI models should be used in the project? What are the strengths and weaknesses of different models?
-*   **User Experience:** How can the website be designed to provide a great user experience? What are the best practices for designing AI-powered websites?
+* **Project Goals:** What are the goals of the project? What does the developer want to achieve?
+* **Target Audience:** Who is the target audience for the website? What are their needs and expectations?
+* **Technology Stack:** What is the best technology stack for the project? What are the pros and cons of different technologies?
+* **AI Models:** Which AI models should be used in the project? What are the strengths and weaknesses of different models?
+* **User Experience:** How can the website be designed to provide a great user experience? What are the best practices for designing AI-powered websites?
 
 ## Quality Review
 
 When reviewing the code and documentation, you should look for the following:
 
-*   **Code Quality:** Is the code well-written, efficient, and easy to understand? Does it follow best practices for the chosen technology stack?
-*   **Documentation Quality:** Is the documentation clear, concise, and comprehensive? Does it provide all the information that is needed to understand the project?
-*   **Project Structure:** Is the project well-structured and easy to navigate? Is the code organized in a logical and consistent way?
-*   **Security:** Is the website secure? Are there any potential security vulnerabilities?
+* **Code Quality:** Is the code well-written, efficient, and easy to understand? Does it follow best practices for the chosen technology stack?
+* **Documentation Quality:** Is the documentation clear, concise, and comprehensive? Does it provide all the information that is needed to understand the project?
+* **Project Structure:** Is the project well-structured and easy to navigate? Is the code organized in a logical and consistent way?
+* **Security:** Is the website secure? Are there any potential security vulnerabilities?
 
 ## Different Perspective from Gemini
 

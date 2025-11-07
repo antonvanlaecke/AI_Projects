@@ -1,46 +1,62 @@
 # AI Projects Workspace
 
-This workspace is a sandbox for experimenting with AI-assisted development workflows.
-It combines multiple AI agents, lightweight scripts and documentation so you can plan,
-build and review portfolio-ready projects that highlight creative AI capabilities.
+This repo hosts the AI-powered portfolio that Gemini is building and Codex is supervising. It combines ProcessWire/Twig scaffolding, Docker tooling, and documentation so we can iterate on the site while keeping quality high.
 
-## Repository Contents
+## Repository Map
 
-- `GEMINI.md` – feature-focused brief that Gemini (the primary assistant) uses to ideate and
-  generate code or content.
-- `CODEX_GUIDE.md` – quality and strategy playbook that Codex (the QA assistant) follows when
-  reviewing work.
-- `AGENTS.md` – quick reference for each agent's role in the workflow.
-- `scripts/codex_review.sh` – helper executed by Codex to run checks and manage commits.
+- `site/` – ProcessWire-ready assets:
+  - `templates/` (Twig views + layout)
+  - `assets/css/style.css`
+  - `modules/Setup.php` (provisioning placeholder)
+- `index.html` – static preview that mirrors the Twig structure so the site can already be viewed in Docker.
+- `Dockerfile` + `docker-compose.yml` – PHP 8.2 + Apache stack with MySQL 8 for the CMS install.
+- `docs/BUILD_LOG.md` – timeline of actions performed by Gemini (builder) and Codex (QA).
+- `scripts/codex_review.sh` – helper that stages, commits, and pushes Codex review passes.
+- `AGENTS.md`, `GEMINI.md`, `CODEX_GUIDE.md` – describe the agent workflow.
 
-## Workflow Cheatsheet
+## Workflow at a Glance
 
-1. Ideate or build with `gemini`, guided by `GEMINI.md`.
-2. Hand work off to `codex`:
-   - review the changes,
-   - ensure documentation (including this README) reflects reality,
-   - prepare the Git history.
-3. Use `scripts/codex_review.sh` to automate Codex’s checklist (see script for details).
+1. Gemini prototypes features/content (see `GEMINI.md` for remit) and keeps Docker running.
+2. Codex reviews, documents, and keeps the repo clean (`docs/BUILD_LOG.md`).
+3. Use the Docker preview to validate UI, then translate the same structure into ProcessWire templates once the CMS install is ready.
 
-## Getting Started
+## Git Setup (already configured)
 
-1. Keep project-specific docs close to the code (e.g., add `/docs` or `/src` folders as the
-   prototype evolves).
-2. Record manual steps or decisions inside `README.md` so Codex can keep future reviews grounded.
+Remote: `https://github.com/antonvanlaecke/AI_Projects.git`
 
-## Git Setup (step by step)
+If cloning on another machine:
 
-Run these commands from the project root (`/Users/antonvanlaecke/Code/AI_Projects`):
+```bash
+git clone https://github.com/antonvanlaecke/AI_Projects.git
+cd AI_Projects
+```
 
-1. `git init` – creates a new Git repository in the current folder.
-2. `git branch -M main` – renames the default branch to `main`.
-3. `git remote add origin https://github.com/antonvanlaecke/AI_Projects.git` – connects the repo to the hosted origin. (Use `git@github.com:antonvanlaecke/AI_Projects.git` if you prefer SSH.)
-4. `git status -sb` – verify Git sees your files as expected.
-5. `git add . && git commit -m "chore: initial commit"` – capture the initial snapshot.
-6. `git push -u origin main` – pushes your `main` branch and sets the upstream for future pushes.
+## Run / Inspect the Preview
 
-## Next Steps
+Gemini already spun up Docker, but these are the commands to start/stop it yourself:
 
-- Flesh out the actual application (e.g., ProcessWire/Twig scaffold described in `GEMINI.md`).
-- Expand automation in `scripts/codex_review.sh` with linting or test hooks once code exists.
-- Document environment variables, deployment targets and data-flow diagrams as they emerge.
+```bash
+docker compose up --build -d   # starts PHP/Apache + MySQL
+open http://localhost:8080     # view the static preview (index.html) served from /var/www/html
+docker compose logs -f web     # tail Apache + PHP logs
+docker compose down            # stop and remove containers/volumes
+```
+
+### What you should see
+
+- `index.html` renders the landing page preview with project cards, highlight grid, and skills list.
+- CSS is shared with ProcessWire templates (`site/assets/css/style.css`), so the visual system matches the Twig implementation.
+
+> ProcessWire core files (`wire/` etc.) are not committed. Install them inside Docker via the official ZIP or Composer when you are ready to hook up the CMS. The repo only contains the custom `site/` directory and supporting tooling.
+
+## Documentation Trail
+
+- `docs/BUILD_LOG.md` – append every notable action with timestamp/actor/notes so we can audit progress.
+- Inline comments stay intentionally sparse; reference docs should explain decisions instead.
+
+## Next Technical Steps
+
+1. Finish the ProcessWire installer inside Docker (already running at `http://localhost:8080/install.php` earlier) and point Apache to the CMS front controller.
+2. Wire `site/templates` into ProcessWire (update template settings, fields, and module provisioning).
+3. Extend `scripts/codex_review.sh` with linting/tests once PHP logic lands.
+4. Add environment variables/secrets documentation once external AI APIs enter the stack.

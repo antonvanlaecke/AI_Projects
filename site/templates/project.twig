@@ -1,0 +1,25 @@
+{% extends "_layout.twig" %}
+
+{% block content %}
+    <section id="project">
+        <h1>{{ page.title }}</h1>
+
+        {% if page.images is defined and page.images|length %}
+        <div class="visual-showcase">
+            {{ page.images.each("<img src='{value.url}' alt='{value.description}'>") }}
+        </div>
+        {% endif %}
+
+        <div class="challenges-solutions">
+            <h2>Challenges and Solutions</h2>
+            {{ page.body }}
+        </div>
+
+        {% if page.code_snippets %}
+        <div class="code-snippets">
+            <h2>Code Snippets</h2>
+            <pre><code>{{ page.code_snippets }}</code></pre>
+        </div>
+        {% endif %}
+    </section>
+{% endblock %}

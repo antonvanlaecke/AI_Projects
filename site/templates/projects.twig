@@ -1,0 +1,25 @@
+{% extends "_layout.twig" %}
+
+{% block content %}
+    <section id="projects">
+        <h1>{{ page.title }}</h1>
+        <div class="project-grid">
+            {% for project in page.children|default([]) %}
+                <article class="project-card">
+                    <h2><a href="{{ project.url }}">{{ project.title }}</a></h2>
+                    {% if project.technologies %}
+                        <p class="technologies">{{ project.technologies.implode(", ") }}</p>
+                    {% endif %}
+                    {% if project.role %}
+                        <p class="role">{{ project.role }}</p>
+                    {% endif %}
+                    {% if project.summary %}
+                        <p>{{ project.summary }}</p>
+                    {% endif %}
+                </article>
+            {% else %}
+                <p class="empty-state">Er zijn nog geen projecten gepubliceerd.</p>
+            {% endfor %}
+        </div>
+    </section>
+{% endblock %}

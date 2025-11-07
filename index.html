@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-Powered Portfolio</title>
+    <link rel="stylesheet" href="/site/assets/css/style.css">
+</head>
+<body>
+    <header>
+        <nav aria-label="Primary">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home">
+            <p class="eyebrow">AI-Powered Portfolio</p>
+            <h1>Creative AI experiences powered by ProcessWire &amp; Twig</h1>
+            <p>Deze preview toont de visuele stijl en contentstructuur die Gemini aan het bouwen is.
+               De uiteindelijke versie wordt gevoed door ProcessWire en draait de interactieve demos rechtstreeks vanuit het CMS.</p>
+            <p><a class="primary-cta" href="#projects">Bekijk de projecten</a></p>
+        </section>
+
+        <section class="highlight-grid">
+            <article>
+                <h2>Multi-model flows</h2>
+                <p>Combineer OpenAI, Gemini en toekomstige modellen in één orkestratie-laag.</p>
+            </article>
+            <article>
+                <h2>Creative showcases</h2>
+                <p>Genereer realtime visuals, muziek of tekstfragmenten die direct in de portfolio verschijnen.</p>
+            </article>
+            <article>
+                <h2>Educational angles</h2>
+                <p>Elke demo krijgt een korte uitleg over het gebruikte model, de prompt-strategie en de inzetbare use-cases.</p>
+            </article>
+        </section>
+
+        <section id="projects">
+            <h1>Projecten</h1>
+            <div class="project-grid">
+                <article class="project-card">
+                    <h2>Realtime Prompt Playground</h2>
+                    <p class="technologies">OpenAI · Gemini · Cloud Run</p>
+                    <p class="role">Rol: AI Engineer / UX</p>
+                    <p>Live prompt-tuning met een dubbele model output voor directe vergelijking.</p>
+                </article>
+                <article class="project-card">
+                    <h2>Procedural City Visualizer</h2>
+                    <p class="technologies">Stable Diffusion · ControlNet</p>
+                    <p class="role">Rol: Creative Technologist</p>
+                    <p>Genereert stedelijke concept art op basis van architecturale constraints.</p>
+                </article>
+                <article class="project-card">
+                    <h2>Audio Mood Board</h2>
+                    <p class="technologies">MusicGen · Web Audio API</p>
+                    <p class="role">Rol: Audio Engineer</p>
+                    <p>Een interactieve soundboard die AI-composities matcht met portfolio visuals.</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h1>Skills</h1>
+            <ul class="skill-list">
+                <li><p class="skill-name">AI Orchestration</p><span class="skill-level">Advanced</span></li>
+                <li><p class="skill-name">ProcessWire &amp; PHP</p><span class="skill-level">Advanced</span></li>
+                <li><p class="skill-name">Twig &amp; Frontend Systems</p><span class="skill-level">Advanced</span></li>
+                <li><p class="skill-name">Docker &amp; DevOps</p><span class="skill-level">Intermediate</span></li>
+            </ul>
+        </section>
+
+        <section id="about">
+            <h1>Over dit project</h1>
+            <p>Deze statische preview draait volledig in Docker en gebruikt dezelfde CSS en contentstructuur als de uiteindelijke ProcessWire implementatie.
+               Zodra het CMS gereed is kan de bestaande <code>site/</code>-map één op één worden gekopieerd.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="year"></span> AI Portfolio</p>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>

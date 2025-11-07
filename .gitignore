@@ -1,0 +1,22 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+
+# ProcessWire / PHP artifacts
+/wire/
+/site/assets/cache/
+/site/assets/logs/
+/site/assets/sessions/
+/site/assets/backups/
+/site/modules/ProcessWireUpgrade/
+site/config.php
+
+# Local installs
+processwire.zip
+site-blank/
+vendor/
+node_modules/
+
+# Docker
+*.pid
+*.log

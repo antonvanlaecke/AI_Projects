@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{{ page.title|default('AI Portfolio') }}{% endblock %}</title>
+    <meta name="description" content="{{ page.meta_description|default(page.summary)|default('AI-powered portfolio showcase') }}">
+    {% if config is defined and config.urls.assets is defined %}
+        {% set defaultStylesheet = config.urls.assets ~ 'css/style.css' %}
+    {% else %}
+        {% set defaultStylesheet = '/site/assets/css/style.css' %}
+    {% endif %}
+    <link rel="stylesheet" href="{{ asset_url|default(defaultStylesheet) }}">
+</head>
+<body>
+    <header>
+        <nav aria-label="Primary">
+            {% set fallbackNav = [
+                {'label': 'Home', 'url': '/' },
+                {'label': 'Projects', 'url': '/projects/' },
+                {'label': 'Skills', 'url': '/skills/' },
+                {'label': 'About', 'url': '/about/' }
+            ] %}
+            {% set navItems = navigation|default(fallbackNav) %}
+            <ul>
+                {% for item in navItems %}
+                    <li><a href="{{ item.url }}">{{ item.label }}</a></li>
+                {% endfor %}
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy; {{ "now"|date("Y") }} {{ page.owner|default('Gemini AI Portfolio') }}</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,212 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f5f5f7;
+    color: #1d1d1f;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    padding: 2rem;
+    border-bottom: 1px solid #e5e5e5;
+    background: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: #1d1d1f;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+main {
+    padding: 4rem 2rem 6rem;
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.eyebrow {
+    font-size: 0.9rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #6e6e73;
+    margin-bottom: 0.5rem;
+}
+
+.primary-cta {
+    display: inline-block;
+    background: #0071e3;
+    color: #fff;
+    padding: 0.9rem 1.6rem;
+    border-radius: 999px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.2s ease;
+}
+
+.primary-cta:hover {
+    background: #005bb5;
+    color: #fff;
+}
+
+a:hover {
+    color: [HEX-CODE ACCENTKLEUR];
+}
+
+.intro {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.call-to-action {
+    text-align: center;
+}
+
+.btn {
+    display: inline-block;
+    background-color: [HEX-CODE ACCENTKLEUR];
+    color: #fff;
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #0056b3; /* Darker shade of the accent color */
+}
+
+
+footer {
+    text-align: center;
+    padding: 2rem;
+    border-top: 1px solid #e5e5e5;
+    color: #86868b;
+    background: #fff;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.project-card {
+    background-color: #fff;
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    border: 1px solid rgba(0,0,0,0.04);
+}
+
+.project-card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.project-card a {
+    text-decoration: none;
+    color: #1d1d1f;
+}
+
+.technologies {
+    font-size: 0.9rem;
+    color: #86868b;
+    margin-bottom: 0.5rem;
+}
+
+.role {
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.highlight-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin: 3rem 0;
+}
+
+.highlight-grid article {
+    background: rgba(255,255,255,0.9);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    border: 1px solid rgba(0,0,0,0.04);
+}
+
+.skill-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+}
+
+.skill-list li {
+    background: #fff;
+    padding: 1.25rem;
+    border-radius: 1rem;
+    border: 1px solid rgba(0,0,0,0.04);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.skill-name {
+    font-weight: 600;
+    margin: 0;
+}
+
+.skill-level {
+    font-size: 0.85rem;
+    color: #0071e3;
+    font-weight: 600;
+}
+
+.empty-state {
+    color: #6e6e73;
+    font-style: italic;
+}
+
+.visual-showcase img {
+    max-width: 100%;
+    border-radius: 1rem;
+    margin-bottom: 2rem;
+}
+
+.challenges-solutions, .code-snippets {
+    margin-bottom: 2rem;
+}
+
+pre {
+    background-color: #f5f5f5;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    overflow-x: auto;
+}
+
+code {
+    font-family: "SF Mono", "Fira Code", monospace;
+}
