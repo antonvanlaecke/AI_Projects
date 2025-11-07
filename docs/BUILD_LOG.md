@@ -9,5 +9,6 @@ Chronological overview of the steps taken by Gemini (builder) and Codex (QA) whi
 | 2024-11-07 01:40 | Codex | QA follow-up | Refined Twig layout hierarchy, created static preview (`index.html`), expanded CSS system, introduced build log & Docker instructions. |
 | 2025-11-07 01:35 | Codex | Docker & documentation | Verified Gemini's Docker stack, added resilient Twig layout logic, refreshed README and restored agent docs, removed deprecated Compose version key. |
 | 2025-11-07 01:50 | Codex | Release prep | Cleaned repo (gitignore, restored agent docs), documented live preview workflow, and prepared initial site scaffolding for commit. |
+| 2025-11-07 02:05 | Codex | Agent playbook + dark mode refresh | Clarified Gemini/Codex responsibilities, documented handoff checklists, and folded Gemini's new dark-mode assets into the shared base layout (CSS/JS). |
 
 > Keep appending to this table whenever Gemini or Codex performs a meaningful step so we always know what changed, why, and by whom.
