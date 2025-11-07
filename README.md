@@ -20,6 +20,12 @@ This repo hosts the AI-powered portfolio that Gemini is building and Codex is su
 2. Codex reviews, documents, and keeps the repo clean (`docs/BUILD_LOG.md`).
 3. Use the Docker preview to validate UI, then translate the same structure into ProcessWire templates once the CMS install is ready.
 
+## Current Status (2025‑11‑07)
+
+- Static preview (`index.html`) now mirrors the Twig layout including the light/dark toggle and shared CSS/JS.
+- Docker stack was stopped after verification (`docker compose down`). Restart with `docker compose up --build -d` when you need it again.
+- ProcessWire core files still live outside Git; only the custom `site/` directory is tracked.
+
 ## Git Setup (already configured)
 
 Remote: `https://github.com/antonvanlaecke/AI_Projects.git`

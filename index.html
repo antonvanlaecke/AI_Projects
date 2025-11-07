@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI-Powered Portfolio</title>
     <link rel="stylesheet" href="/site/assets/css/style.css">
+    <link rel="stylesheet" href="/site/assets/css/dark.css">
 </head>
 <body>
     <header>
@@ -16,6 +17,7 @@
                 <li><a href="#about">About</a></li>
             </ul>
         </nav>
+        <button id="theme-switcher" type="button">Toggle Theme</button>
     </header>
 
     <main>
@@ -87,6 +89,7 @@
         <p>&copy; <span id="year"></span> AI Portfolio</p>
     </footer>
 
+    <script src="/site/assets/js/theme.js"></script>
     <script>
         document.getElementById('year').textContent = new Date().getFullYear();
     </script>
